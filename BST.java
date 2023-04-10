@@ -1,4 +1,6 @@
+import java.util.Scanner;
 import java.util.Stack;
+
 
 
       class Node{
@@ -11,7 +13,7 @@ import java.util.Stack;
         }
     }
     public class BST {
-    Node root;
+    static Node root;
     void iterativePreorder(){
         iterativePreorder(root);
     }
@@ -33,7 +35,7 @@ import java.util.Stack;
             }
         }
        }
-       void iterativeInorder(Node node){
+       static void iterativeInorder(Node node){
         if(node == null)
         return ;
         iterativeInorder(node.left);
@@ -47,9 +49,27 @@ import java.util.Stack;
         iterativePostorder(node.right);
         System.out.print(node.data+ " ");
        }
-       public static void main(String[] args){
+       /**
+     * @param args
+     */
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        String s = in.nextLine();
+        String str[] = s.split(" ");
+        int arr[] = new int[str.length];
+        for( int i = 0; i<str.length;i++){
+            arr[i] = Integer.valueOf(str[i]);
+        }
+        for(int i =0; i<arr.length;i++){
+            (arr[i]);
+        }
+        iterativeInorder(root);
 
-        BST tree = new BST();
+        
+        
+
+
+        /* BST tree = new BST();
         tree.root = new Node(10);
         tree.root.left = new Node(8);
         tree.root.right = new Node(2);
@@ -61,7 +81,8 @@ import java.util.Stack;
         System.out.println("\n");
         tree.iterativeInorder(null);
         System.out.println("\n");
-        tree.iterativePostorder(null);
+        tree.iterativePostorder(null); */
+
 
        }
  }
