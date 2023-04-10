@@ -33,6 +33,20 @@ import java.util.Stack;
             }
         }
        }
+       void iterativeInorder(Node node){
+        if(node == null)
+        return ;
+        iterativeInorder(node.left);
+        System.out.print(node.data+ " ");
+        iterativeInorder(node.right);
+       }
+       void iterativePostorder(Node node){
+        if(node == null)
+        return;
+        iterativePostorder(node.left);
+        iterativePostorder(node.right);
+        System.out.print(node.data+ " ");
+       }
        public static void main(String[] args){
 
         BST tree = new BST();
@@ -42,7 +56,13 @@ import java.util.Stack;
         tree.root.left.left = new Node(3);
         tree.root.left.right = new Node(5);
         tree.root.right.left = new Node(2);
+        System.out.println("\n");
         tree.iterativePreorder();
+        System.out.println("\n");
+        tree.iterativeInorder(null);
+        System.out.println("\n");
+        tree.iterativePostorder(null);
+
        }
  }
 
